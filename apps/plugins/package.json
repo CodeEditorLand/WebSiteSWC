@@ -1,5 +1,5 @@
 {
-	"name": "swc-plugins",
+	"name": "@codeeditorland/plugins",
 	"scripts": {
 		"build:next": "next build",
 		"db:build": "prisma generate",
