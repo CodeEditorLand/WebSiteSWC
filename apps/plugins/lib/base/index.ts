@@ -35,10 +35,10 @@ export type Abilities = {
 };
 
 export type Context = {
-	/**
-	 * Get the access token from the request header. (Authorization: Bearer $token)
-	 */
-	getAccessToken(): string | undefined;
+    /**
+     * Get the access token from the request header. (Authorization: Bearer $token)
+     */
+    getAccessToken(): Promise<string | undefined>;
 
 	user: User | null;
 

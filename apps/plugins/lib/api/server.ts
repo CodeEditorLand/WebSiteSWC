@@ -27,17 +27,30 @@ export const handler = (req: Request) =>
 async function createContext(
 	params?: FetchCreateContextFnOptions | { isAdmin: boolean },
 ): Promise<Context> {
-	if (!params) {
-		console.warn("No params provided to createContext");
+    if (!params) {
+        console.warn("No params provided to createContext");
+        return {
+            async getAccessToken() {
+                return undefined;
+            },
+            user: null,
+            abilities: defineAbilitiesFor({ user: null }),
+            responseHeaders: null,
+            isAdmin: false,
+        };
+    }
 
-		return {
-			getAccessToken: () => undefined,
-			user: null,
-			abilities: defineAbilitiesFor({ user: null }),
-			responseHeaders: null,
-			isAdmin: false,
-		};
-	}
+    if ("isAdmin" in params) {
+        return {
+            async getAccessToken() {
+                return undefined;
+            },
+            user: null,
+            abilities: defineAbilitiesFor({ user: null }),
+            responseHeaders: null,
+            isAdmin: !!("isAdmin" in params && params.isAdmin),
+        };
+    }
 
 	if ("isAdmin" in params) {
 		return {
@@ -51,23 +64,17 @@ async function createContext(
 
 	const user: User | null = await getCurrentUser();
 
-	const abilities = defineAbilitiesFor({
-		user,
-	});
-
-	return {
-		getAccessToken() {
-			const h = headers();
-
-			const auth = h.get("authorization");
-
-			return auth ? auth.replace("Bearer ", "") : undefined;
-		},
-		user,
-		abilities,
-		responseHeaders: null,
-		isAdmin: false,
-	};
+    return {
+        async getAccessToken() {
+            const h = await headers();
+            const auth = h.get("authorization");
+            return auth ? auth.replace("Bearer ", "") : undefined;
+        },
+        user,
+        abilities,
+        responseHeaders: null,
+        isAdmin: false,
+    };
 }
 
 export function defineAbilitiesFor({ user }: { user: User | null }): Abilities {
@@ -169,19 +176,16 @@ export const createCaller = async (ctx?: Context) => {
 		user,
 	});
 
-	const newCtx: Context = {
-		getAccessToken() {
-			const h = headers();
-
-			const auth = h.get("authorization");
-
-			return auth ? auth.replace("Bearer ", "") : undefined;
-		},
-		user,
-		abilities,
-		responseHeaders: null,
-		isAdmin: false,
-	};
-
-	return factory(newCtx);
+    const newCtx: Context = {
+        async getAccessToken() {
+            const h = await headers();
+            const auth = h.get("authorization");
+            return auth ? auth.replace("Bearer ", "") : undefined;
+        },
+        user,
+        abilities,
+        responseHeaders: null,
+        isAdmin: false,
+    };
+    return factory(newCtx);
 };
