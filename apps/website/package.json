@@ -7,20 +7,20 @@
 		"start": "next start"
 	},
 	"dependencies": {
-		"@reach/skip-nav": "^0.16.0",
-		"chart.js": "^3.7.1",
-		"focus-visible": "^5.2.0",
-		"markdown-to-jsx": "^6.11.4",
-		"next": "^13.0.6",
-		"nextra": "2.2.20",
-		"nextra-theme-docs": "2.2.20",
-		"react-chartjs-2": "^3.3.0"
+		"@reach/skip-nav": "0.18.0",
+		"chart.js": "4.4.8",
+		"focus-visible": "5.2.1",
+		"markdown-to-jsx": "7.7.4",
+		"next": "15.2.4",
+		"nextra": "4.2.17",
+		"nextra-theme-docs": "4.2.17",
+		"react-chartjs-2": "5.3.0"
 	},
 	"devDependencies": {
-		"@codeeditorland/types": "^0.1.20",
-		"@types/node": "^18.11.10",
-		"autoprefixer": "^10.4.2",
-		"postcss": "^8.4.6",
-		"typescript-json-schema": "^0.63.0"
+		"@codeeditorland/types": "0.1.20",
+		"@types/node": "22.13.14",
+		"autoprefixer": "10.4.21",
+		"postcss": "8.5.3",
+		"typescript-json-schema": "0.65.1"
 	}
 }
