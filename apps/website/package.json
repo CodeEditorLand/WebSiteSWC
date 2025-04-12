@@ -1,45 +1,60 @@
 {
-  "name": "swc-site",
-  "author": "DongYoon Kang",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "generate": "typescript-json-schema tsconfig.json 'SwcOptions' > public/schema.json",
-    "build": "pnpm run generate && next build --turbopack",
-    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@reach/skip-nav": "^0.16.0",
-    "chart.js": "^3.7.1",
-    "focus-visible": "^5.2.0",
-    "markdown-to-jsx": "^6.11.4",
-    "next": "15.3.0",
-    "nextra": "4.2.17",
-    "nextra-theme-docs": "4.2.17",
-    "react": "19.1.0",
-    "react-chartjs-2": "^3.3.0",
-    "react-dom": "19.1.0"
-  },
-  "devDependencies": {
-    "@swc/types": "^0.1.20",
-    "@tailwindcss/postcss": "^4.1.3",
-    "@types/node": "^18.11.10",
-    "@types/react": "19.1.0",
-    "autoprefixer": "^10.4.2",
-    "eslint-config-next": "15.3.0",
-    "pagefind": "^1.3.0",
-    "tailwindcss": "^4.1.3",
-    "typescript": "^4.9.3",
-    "typescript-json-schema": "^0.63.0"
-  },
-  "prettier": {
-    "embeddedLanguageFormatting": "off",
-    "htmlWhitespaceSensitivity": "strict"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.1.0"
-    }
-  }
+	"name": "@codeeditorland/site",
+	"version": "0.0.1",
+	"private": false,
+	"keywords": [
+		"codeeditorland",
+		"land",
+		"playform"
+	],
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/WebSiteSWC#readme",
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/WebSiteSWC/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/WebSiteSWC.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Source 🖋️ Open 👐🏻",
+		"email": "Source/Open@Editor.Land",
+		"url": "HTTPS://Editor.Land"
+	},
+	"type": "module",
+	"scripts": {
+		"build": "pnpm run generate && next build --turbopack",
+		"postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+		"dev": "next dev",
+		"generate": "typescript-json-schema tsconfig.json 'SwcOptions' > public/schema.json",
+		"prepublishOnly": "Build 'Source/**/*.ts'",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@reach/skip-nav": "^0.16.0",
+		"chart.js": "^3.7.1",
+		"focus-visible": "^5.2.0",
+		"markdown-to-jsx": "^6.11.4",
+		"next": "15.3.0",
+		"nextra": "4.2.17",
+		"nextra-theme-docs": "4.2.17",
+		"react-chartjs-2": "^3.3.0"
+	},
+	"devDependencies": {
+		"@codeeditorland/types": "^0.1.20",
+		"@playform/build": "0.2.3",
+		"@tailwindcss/postcss": "^4.1.3",
+		"@types/node": "^18.11.10",
+		"autoprefixer": "^10.4.2",
+		"pagefind": "^1.3.0",
+		"typescript-json-schema": "^0.63.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "19.1.0"
+		}
+	}
 }

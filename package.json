@@ -1,41 +1,56 @@
 {
-  "name": "swc-project-website-workspace",
-  "packageManager": "pnpm@8.6.3",
-  "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "run-turbo": "turbo",
-    "prepare": "husky install",
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "start": "turbo run start",
-    "lint": "turbo run lint",
-    "test": "turbo run test"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "8.23.0",
-    "eslint-plugin-simple-import-sort": "^9.0.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13",
-    "turbo": "^2.5.0"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write"
-    ],
-    "**/*": "prettier --write --ignore-unknown"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.0.12",
-      "@types/react-dom": "19.0.4"
-    }
-  }
+	"name": "@codeeditorland/project-website-workspace",
+	"version": "0.0.1",
+	"private": false,
+	"description": "",
+	"keywords": [
+		"codeeditorland",
+		"land",
+		"playform"
+	],
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/WebSiteSWC#readme",
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/WebSiteSWC/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/WebSiteSWC.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Source 🖋️ Open 👐🏻",
+		"email": "Source/Open@Editor.Land",
+		"url": "HTTPS://Editor.Land"
+	},
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"prepare": "husky install",
+		"prepublishOnly": "Build 'Source/**/*.ts'",
+		"run-turbo": "turbo",
+		"start": "turbo run start"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown",
+		"*.{js,jsx,ts,tsx}": [
+			"prettier --write"
+		]
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@playform/build": "0.2.3",
+		"lint-staged": "^13.0.3",
+		"turbo": "^2.5.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "19.0.12",
+			"@types/react-dom": "19.0.4"
+		}
+	}
 }
