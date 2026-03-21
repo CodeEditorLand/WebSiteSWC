@@ -14,7 +14,7 @@
     "chart.js": "^4.4.9",
     "focus-visible": "^5.2.1",
     "markdown-to-jsx": "^7.7.6",
-    "next": "15.3.3",
+    "next": "15.5.14",
     "nextra": "4.2.17",
     "nextra-theme-docs": "4.2.17",
     "react": "19.1.0",
